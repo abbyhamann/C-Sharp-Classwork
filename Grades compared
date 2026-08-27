@@ -1,0 +1,38 @@
+using System;
+using System.Threading.Tasks.Sources;
+
+namespace className
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number of students in the class");
+            int numStudents = Convert.ToInt32(Console.ReadLine());
+
+            int[] studentMarks = new int[numStudents];
+            int total = 0;
+            int highest = 0;
+            int lowest = 100;
+
+            for (int i = 0; i < studentMarks.Length; i++)
+            {
+                Console.WriteLine("Enter the marks of student " + i);
+                int score = Convert.ToInt32(Console.ReadLine());
+                studentMarks[i] = score;
+                total = total + score;
+                if (score > highest) highest = score;
+                if (score < lowest) lowest = score;
+            }
+
+            Console.WriteLine("The total number of students is " + numStudents);
+            Console.WriteLine("The total marks of the class is " + total);
+            Console.WriteLine("The highest score in the calss is " + highest);
+            Console.WriteLine("The lowest score in the class is " + lowest);
+            foreach (int i in studentMarks)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
