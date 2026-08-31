@@ -11,17 +11,55 @@ namespace money
             string pinNumber = "233462562";
 
             Console.WriteLine("Welcome to the ATM Service*");
-            Console.WriteLine("1. Chack Balance");
+            Console.WriteLine("1. Check Balance");
             Console.WriteLine("2. Withdraw Cash");
             Console.WriteLine("3. Deposit Cash");
             Console.WriteLine("4. Quit");
 
             Console.WriteLine("Enter pin number:");
             string userPin = Console.ReadLine();
+            string choice = "";
             if (userPin.Equals(pinNumber))
             {
-                Console.WriteLine("Welcome! What would you like to do?");
-                
+                while (choice != "4")
+                {
+                    Console.WriteLine("Welcome! What would you like to do?");
+                    choice = Console.ReadLine();
+
+                    if (choice == "1")
+                    {
+                        Console.WriteLine($"Your balance is: ${balance}");
+                    }
+                    else if (choice == "2")
+                    {
+                        Console.WriteLine("Enter amount to withdraw:");
+                        int withdrawAmount = Convert.ToInt32(Console.ReadLine());
+                        if (withdrawAmount <= balance)
+                        {
+                            balance -= withdrawAmount;
+                            Console.WriteLine($"You have withdrawn ${withdrawAmount}. Your new balance is: ${balance}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Insufficient funds.");
+                        }
+                    }
+                    else if (choice == "3")
+                    {
+                        Console.WriteLine("Enter amount to deposit:");
+                        int depositAmount = Convert.ToInt32(Console.ReadLine());
+                        balance += depositAmount;
+                        Console.WriteLine($"You have deposited ${depositAmount}. Your new balance is: ${balance}");
+                    }
+                    else if (choice == "4")
+                    {
+                        Console.WriteLine("Thank you for using the ATM Service. Goodbye!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice.");
+                    }
+                }
             }
             else
             {
