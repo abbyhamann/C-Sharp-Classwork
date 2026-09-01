@@ -1,0 +1,30 @@
+using System;
+namespace CalculateSumofDigits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number:");
+            string input = Console.ReadLine();
+            int sum = CalculateSumOfDigits(input);
+            Console.WriteLine($"The sum of the digits in {input} is: {sum}");
+        }
+        static int CalculateSumOfDigits(string number)
+        {
+            int sum = 0;
+            foreach (char digit in number)
+            {
+                if (char.IsDigit(digit))
+                {
+                    sum += digit - '0'; // Convert char to int
+                }
+                else
+                {
+                    Console.WriteLine($"'{digit}' is not a valid digit.");
+                }
+            }
+            return sum;
+        }
+    }
+}
