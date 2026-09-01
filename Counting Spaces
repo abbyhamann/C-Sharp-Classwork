@@ -1,0 +1,21 @@
+using System;
+namespace CountingSpaces
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a string:");
+            string string1 = Console.ReadLine();
+            int spaceCount = 0;
+            foreach (char c in string1)
+            {
+                if (c == ' ')
+                {
+                    spaceCount++;
+                }
+            }
+            Console.WriteLine("Number of spaces: " + spaceCount);
+        }
+    }
+}
