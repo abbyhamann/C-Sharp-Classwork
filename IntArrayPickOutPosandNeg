@@ -1,0 +1,34 @@
+using System;
+namespace IntArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number of elements: ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the numbers");
+
+            int[] numArray = new int[size];
+            string posNums = "";
+            string negNums = "";
+
+            foreach (int i in numArray)
+            {
+                numArray[i] = Convert.ToInt32(Console.ReadLine());
+                if (numArray[i] > 0)
+                {
+                    posNums += Convert.ToString(numArray[i]) + " ";
+                }
+                else if (numArray[i] < 0)
+                {
+                    negNums += Convert.ToString(numArray[i]) + " ";
+                }
+            }
+            Console.WriteLine("Positive Numbers: ");
+            Console.WriteLine(posNums);
+            Console.WriteLine("Negative Numbers: ");
+            Console.WriteLine(negNums);
+        }
+    }
+}
