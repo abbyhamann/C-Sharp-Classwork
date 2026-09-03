@@ -1,0 +1,16 @@
+using System;
+namespace UpperandLowercase
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a character: ");
+            char input = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Uppercase: " + char.ToUpper(input));
+            Console.WriteLine("Lowercase: " + char.ToLower(input));
+
+        }
+    }
+}
