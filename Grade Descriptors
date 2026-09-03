@@ -1,0 +1,38 @@
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the student grade: ");
+            string grade = Console.ReadLine();
+
+            if (grade == "A")
+            {
+                Console.WriteLine("Excellent");
+            }
+            else if(grade == "B")
+            {
+                Console.WriteLine("Very Good");
+            }
+            else if (grade == "C")
+            {
+                Console.WriteLine("Good");
+            }
+            else if (grade == "D")
+            {
+                Console.WriteLine("Work hard");
+            }
+            else if (grade == "E")
+            {
+                Console.WriteLine("Poor");
+            }
+            else if (grade == "F")
+            {
+                Console.WriteLine("Very Poor");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input");
+            }
+        }
+    }
+}
