@@ -1,0 +1,24 @@
+using System;
+namespace ConvertDaystoYears
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number of days: ");
+            int totalDays = Convert.ToInt32(Console.ReadLine());
+
+            int years = totalDays / 365;
+            int remainder = totalDays % 365;
+
+            int weeks = remainder / 7;
+            remainder = remainder % 7;
+
+            int days = remainder;
+
+            Console.WriteLine("Years: {0}", years);
+            Console.WriteLine("Weeks: {0}", weeks);
+            Console.WriteLine("Days: {0}", days);
+        }
+    }
+}
