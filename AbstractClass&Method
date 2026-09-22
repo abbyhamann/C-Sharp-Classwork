@@ -1,0 +1,44 @@
+using AbstractClassAndMethod;
+using System;
+
+namespace AbstractClassAndMethod
+{
+    public abstract class Payment
+    {
+        public abstract void ProcessPayment(double amount);
+        public void DisplayReceipt()
+        {
+            Console.WriteLine("Thank you for your payment!");
+        }
+    }
+    public class CreditCardPayment : Payment
+    {
+        public override void ProcessPayment(double amount)
+        {
+            Console.WriteLine($"Processing credit card payment of ${amount:F2}");
+        }
+    }
+    public class PayPalPayment : Payment
+    {
+        public override void ProcessPayment(double amount)
+        {
+            Console.WriteLine($"Processing PayPal payment of ${amount:F2}");
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Payment pay1;
+            pay1 = new CreditCardPayment();
+            pay1.ProcessPayment(589.87);
+            pay1.DisplayReceipt();
+
+            PayPalPayment pay2 = new PayPalPayment();
+            pay2.ProcessPayment(1000.00);
+            pay2.DisplayReceipt();
+        }
+    }
+}
