@@ -1,0 +1,63 @@
+namespace Interface
+{
+    public interface ISmartDevice
+    {
+        void TurnOn();
+        void TurnOff();
+        void GetStatus();
+    }
+    public class SmartLight : ISmartDevice
+    {
+        private bool isOn;
+        public void TurnOn()
+        {
+            isOn = true;
+            Console.WriteLine("Smart Light is now ON.");
+        }
+        public void TurnOff()
+        {
+            isOn = false;
+            Console.WriteLine("Smart Light is now OFF.");
+        }
+        public void GetStatus()
+        {
+            string status = isOn ? "ON" : "OFF";
+            Console.WriteLine($"Smart Light is currently {status}.");
+        }
+    }
+    public class SmartThermostat : ISmartDevice
+    {
+        private bool isOn;
+        public void TurnOn()
+        {
+            isOn = true;
+            Console.WriteLine("Smart Thermostat is now ON.");
+        }
+        public void TurnOff()
+        {
+            isOn = false;
+            Console.WriteLine("Smart Thermostat is now OFF.");
+        }
+        public void GetStatus()
+        {
+            string status = isOn ? "ON" : "OFF";
+            Console.WriteLine($"Smart Thermostat is currently {status}.");
+        }
+    }
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            SmartLight light = new SmartLight();
+            light.TurnOn();
+            light.GetStatus();
+            light.TurnOff();
+
+            SmartThermostat thermostat = new SmartThermostat();
+            thermostat.TurnOn();
+            thermostat.GetStatus();
+            thermostat.TurnOff();
+        }
+    }
+}
